@@ -1,0 +1,88 @@
+.persons--container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.persons--category {
+}
+
+.persons--category--list {
+    display: flex;
+    gap: 5rem;
+}
+
+.persons--category--title {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.person--container {
+    text-align: center;
+}
+
+.person--image {
+    border-radius: 50%;
+    height: 150px;
+    background-color: var(--primary);
+    transition-timing-function: ease-in;
+    transition: all 0.3s;
+}
+
+.person--image:hover {
+    opacity: 0.3;
+}
+
+.person--name {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.person--title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.join--container {
+    background: var(--primary);
+    padding: 2rem 1rem;
+    color: white;
+}
+
+.join--container--title {
+    text-align: center;
+}
+
+.join--container--description {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.join--container--item {
+    padding: 1rem 4rem;
+    border: white 1px solid;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.join--container--item:hover {
+    background: white;
+
+    .join--container--item--description {
+        color: var(--primary);
+    }
+
+    .join--container--item--title {
+        color: var(--primary);
+    }
+}
+
+.join--container--item--title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.join--container--item--description {
+    text-align: center;
+}

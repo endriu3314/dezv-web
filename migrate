@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'Connection.php';
+
+$conn = new Connection();
+
+$migration = file_get_contents('./db.sql');
+if (!$migration) {
+    exit(1);
+}
+
+// reset command
+if ($argc > 1) {
+    if ($argv[1] === '--reset') {
+        $resetMigration = file_get_contents('./reset-db.sql');
+        if (!$resetMigration) {
+            exit(1);
+        }
+        $result = $conn->multi_query($resetMigration);
+        if (!$result) {
+            exit(1);
+        }
+    }
+}
+
+// normal migration command
+$result = $conn->multi_query($migration);
+if (!$result) {
+    exit(1);
+}
+exit(0);
